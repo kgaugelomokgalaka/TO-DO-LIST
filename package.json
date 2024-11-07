@@ -1,0 +1,15 @@
+{
+  "name": "kgaugelo-to-do-list",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000T\u0000O\u0000-\u0000D\u0000O\u0000-\u0000L\u0000I\u0000S\u0000T\u0000\r\u0000 \u0000",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
