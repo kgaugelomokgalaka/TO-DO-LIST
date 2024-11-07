@@ -46,7 +46,7 @@ input[type="text"] {
 button {
     padding: 10px 15px;
     border: none;
-    background-color: #92b300;
+    background-color: #b300aa;
     color: #fff;                                                                                                                                                                                        
     font-size: 16px;
     border-radius: 4px;
@@ -55,7 +55,7 @@ button {
 }
 
 button:hover {
-    background-color: #05522b; 
+    background-color: #52052f; 
 }
 
 #task-list {

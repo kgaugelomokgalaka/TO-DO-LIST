@@ -1,52 +1,45 @@
 // Select the input field and the task list element
-const taskInput = document.getElementById('task-input');
-const taskList = document.getElementById('task-list');
+//const taskInput = document.getElementById('task-input');
+//const taskList = document.getElementById('task-list');
 
-// Function to add a new task
+// public/script.js
 function addTask() {
+    const taskInput = document.getElementById("task-input");
     const taskText = taskInput.value.trim();
-
-    if (taskText === '') {
-        alert('Please enter a task.');
-        return;
+  
+    if (taskText !== "") {
+      const taskList = document.getElementById("task-list");
+  
+      // Create a new task item
+      const listItem = document.createElement("li");
+      listItem.className = "task-item";
+  
+      // Add text to the task item
+      const taskTextElement = document.createElement("span");
+      taskTextElement.className = "task-text";
+      taskTextElement.innerText = taskText;
+      listItem.appendChild(taskTextElement);
+  
+      // Create a delete button
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "delete-btn";
+      deleteBtn.innerText = "Delete";
+      deleteBtn.onclick = function () {
+        listItem.remove();
+      };
+      listItem.appendChild(deleteBtn);
+  
+      // Add the new task to the task list
+      taskList.appendChild(listItem);
+  
+      // Clear the input field
+      taskInput.value = "";
+    } else {
+      alert("Please enter a task.");
     }
+  }
+  
 
-    const taskItem = document.createElement('li');
-    taskItem.classList.add('task-item');
-
-    // Create the task text element
-    const taskTextElement = document.createElement('span');
-    taskTextElement.classList.add('task-text');
-    taskTextElement.textContent = taskText;
-    taskTextElement.addEventListener('click', () => {
-        taskItem.classList.toggle('completed');
-    });
-
-    // Create the delete button
-    const deleteBtn = document.createElement('button');
-    deleteBtn.classList.add('x-btn');
-    deleteBtn.textContent = 'x';
-    deleteBtn.addEventListener('click', () => {
-        taskList.removeChild(taskItem);
-    });
-
-    // Append the elements to the task item
-    taskItem.appendChild(taskTextElement);
-    taskItem.appendChild(deleteBtn);
-
-    // Add the task item to the list
-    taskList.appendChild(taskItem);
-
-    // Clear the input field
-    taskInput.value = '';
-}
-
-// Allow pressing "Enter" to add a task
-taskInput.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-        addTask();
-    }
-});
 // server.js
 const express = require('express');
 const path = require('path');
