@@ -11,7 +11,7 @@ function addTask() {
       const taskList = document.getElementById("task-list");
   
       // Create a new task item
-      const listItem = document.createElement("li");
+      const listItem = document.createElement("li");  
       listItem.className = "task-item";
   
       // Add text to the task item
